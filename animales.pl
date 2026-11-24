@@ -1,5 +1,8 @@
 % Representación del conocimiento
 
+:- dynamic(isa/2).
+% isa/2: X is a kind of Y
+isa(gato, mamifero).
 isa(perro, mamifero).
 isa(gato, mamifero).
 isa(águila, ave).
