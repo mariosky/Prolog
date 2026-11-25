@@ -1,10 +1,7 @@
 :- use_module(library(files)).
 :- use_module(library(lists)).
-:- use_module(library(dcgs/basics)).
+:- use_module(library(dcgs)).
 :- use_module(library(charsio)).
-
-:- set_prolog_flag(double_quotes, chars).
-
 
 
 
@@ -85,8 +82,6 @@ exp1 --> exp1, "+", exp1.
 exp --> "1", expr.
 expr --> "".
 expr --> "+", exp.
-
-
 
 name([]) --> [].
 name([C|Cs]) --> [C], {char_type(C, alphabetic) ; C = '_'}, name(Cs).
