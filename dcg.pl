@@ -1,9 +1,7 @@
 :- use_module(library(files)).
 :- use_module(library(lists)).
-:- use_module(library(dcgs)).
 :- use_module(library(charsio)).
-
-
+:- use_module(library(dcgs)).
 
 as --> [].
 as -->[a], as.
@@ -106,6 +104,7 @@ file_name(Name, Ext) -->
 %words --> ws, word, ws, words.
 
 %ws -->[W], {char_type(W, whitespace)}, ws | [].
+
 
 
 word([C|Cs]) --> [C], {char_type(C, alphabetic)}, word(Cs).
