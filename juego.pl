@@ -1,5 +1,5 @@
 % Carga con scryer-prolog juego.pl y escribe iniciar. para jugar.
-:- use_module(library(format), [format/2]).
+:- use_module(library(format), [format/2, format/1]).
 
 :- dynamic(posicion_actual/1).
 :- dynamic(inventario/1).
@@ -41,7 +41,7 @@ iniciar :-
     assertz(estado_puerta(cerrada)),
     assertz(objeto_en(llave, pasillo_este)),
     assertz(objeto_en(nota, pasillo_oeste)),
-    format("===================================================~n", []),
+    format("===================================================~n"),
     format("      BIENVENIDO AL JUEGO DE LOS PASILLOS         ~n", []),
     format("===================================================~n", []),
     format("Te despiertas en un vestíbulo oscuro. Debes escapar.~n", []),

@@ -7,11 +7,15 @@ as --> [].
 as -->[a], as.
 
 bs --> "".
-bs --> "b", bs.
+bs --> "c", bs.
 
 
-xy --> [].
-xy --> ("X"|"Y"), xy.
+xy([]) --> [].
+%xy([C|Cs]) --> letraxy(C), xy(Cs).
+xy([C|Cs]) --> [C],{ C = 'X'; C = 'Y' },xy(Cs).
+
+letraxy("X") --> "X".
+letraxy("Y") --> "Y".
 
 % ?- length(Ls,_), phrase(xy,Ls).
 
